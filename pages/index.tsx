@@ -16,8 +16,10 @@ const Home: NextPage = () => {
       <Title>
         <h1 className='hi'>HI</h1>
       </Title>
+      {/* css 변수 사용법 */}
       <style jsx>{`
         .hi {
+          margin-left: var(--margin-left);
           font-family: MonumentExtended, sans-serif;
         }
       `}</style>

@@ -43,3 +43,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --margin-top: 24px;
+  --margin-left: 16px;
+  --margin-right: 16px; 
+  --post-tag-title-space: 10px;
+  --post-basic-space: 8px;
+  --project-basic-space: 8px; 
+  --content-space: 24px;
+  --header-title-space: 32px;
+}
