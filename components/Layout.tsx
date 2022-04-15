@@ -1,7 +1,16 @@
 import React from "react";
 
-const Layout = () => {
-  return <div>Layout</div>;
-};
+interface Props {
+  children: React.ReactNode;
+}
 
-export default Layout;
+export default function Layout({children}: Props) {
+  return (
+    <>
+    <div>
+      {children}
+    </div>
+    </>
+  );
+}
+
