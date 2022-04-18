@@ -1,4 +1,5 @@
 import React from "react";
+import Seo from "./Seo";
 
 interface Props {
   children: React.ReactNode;
@@ -7,6 +8,7 @@ interface Props {
 export default function Layout({children}: Props) {
   return (
     <>
+    <Seo />
     <div>
       {children}
     </div>
