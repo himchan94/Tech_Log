@@ -1,9 +1,6 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme } from './theme';
-import styles from '../styles/Home.module.css'
 
 const Title = styled.div`
   background-color: ${props => props.theme.bgColor};
