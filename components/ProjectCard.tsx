@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 export default function ProjectCard() {
   return (
-    <Section>
+    <ProjectCardContainer>
       <ProjectImg>
-        
+
       </ProjectImg>
       <div>
-        <ProjectName>올라에듀</ProjectName>
+        <ProjectTitle>올라에듀</ProjectTitle>
       </div>
-    </Section>
+    </ProjectCardContainer>
   );
 }
 
-const Section = styled.section`
+const ProjectCardContainer = styled.section`
+  box-sizing: border-box;
   width: 343px;
   height: 232px;
   border-radius: 4px;
@@ -22,14 +23,12 @@ const Section = styled.section`
   padding: 5px 7px;
   margin: 8px 8px 16px;
 `;
-
 const ProjectImg = styled.div`
   width: 329px;
   height: 147px;
   background-color: whitesmoke;
 `;
-
-const ProjectName = styled.h2`
+const ProjectTitle = styled.h2`
   font-family: SpoqaHanSansNeo, sans-serif;
   font-weight: 700;
   font-size: 16px;
