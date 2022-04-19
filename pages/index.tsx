@@ -1,15 +1,14 @@
-import type { NextPage } from 'next'
-import styled, { ThemeProvider } from 'styled-components';
-import { lightTheme } from './theme';
+import type { NextPage } from "next";
+import styled, { ThemeProvider } from "styled-components";
 
 const Title = styled.div`
-  background-color: ${props => props.theme.bgColor};
-  color: ${props => props.theme.textColor};
+  background-color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
 `;
 
 const Home: NextPage = () => {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <>
       <Title>
         <h1 className='hi'>HI</h1>
       </Title>
@@ -20,8 +19,8 @@ const Home: NextPage = () => {
           font-family: MonumentExtended, sans-serif;
         }
       `}</style>
-    </ThemeProvider>
-  )
-}
+    </>
+  );
+};
 
-export default Home
+export default Home;
