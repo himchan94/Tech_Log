@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import Menu from "./Menu";
-import { logo, sun, night, hamburger } from "../../public/images/icon";
+import { logo, hamburger } from "../../public/images/icon";
 
 const menuList = ["about", "post", "project", "search"];
 
