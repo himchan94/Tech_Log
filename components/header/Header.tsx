@@ -37,10 +37,16 @@ const Header = () => {
 export default Header;
 
 const HeaderOuter = styled.header`
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 56px;
+  
   padding: 0 16px;
   background-color: ${(props) => props.theme.mainColor};
   box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12),

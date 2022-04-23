@@ -1,23 +1,38 @@
 import styled from "styled-components";
+import Link from "next/link";
 
-export default function PostCard() {
+interface PostProps {
+  post: {
+  slug: string;
+  frontmatter: {
+    title: string;
+    date: string;
+    excerpt: string;
+  }
+  };
+  
+}
+
+export default function PostCard({post}: PostProps) {
   return (
+    <Link href={`/post/${post.slug}`}>
     <PostCardContainer>
-      <PostCardTitle>자바스크립트 입문기: 오픈그래프 설정</PostCardTitle>
+      <PostCardTitle>{post.frontmatter.title}</PostCardTitle>
       <PostCardContent>
-        JS를 시작하고 오픈그래프에 대해 처음 알았다. 플랫폼을 쓸 때는 이미지 
-        삽입만 하면 됐었는데 직접 이미지 등을 설정해 보닌 아 이렇게...
+        {post.frontmatter.excerpt}
       </PostCardContent>
     </PostCardContainer>
+    </Link>
   );
 }
 
 const PostCardContainer = styled.div`
   box-sizing: border-box;
-  width: 375px;
+  width: 100vw;
   height: 141px;
   padding: 24px 16px;
-  background-color: whitesmoke;
+  background-color: #FFF;
+  border-bottom: 1px solid whitesmoke;
 `;
 const PostCardTitle = styled.h2`
   margin: 10px 0 8px;

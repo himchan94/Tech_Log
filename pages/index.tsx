@@ -6,21 +6,35 @@ const Title = styled.div`
   color: ${(props) => props.theme.textColor};
 `;
 
+
 const Home: NextPage = () => {
   return (
-    <>
-      <Title>
-        <h1 className='hi'>HI</h1>
-      </Title>
-      {/* css 변수 사용법 */}
-      <style jsx>{`
-        .hi {
-          margin-left: var(--margin-left);
-          font-family: MonumentExtended, sans-serif;
-        }
-      `}</style>
-    </>
+    <Title>Home</Title>
   );
 };
 
+
 export default Home;
+
+// export async function getStaticProps() {
+//   const files = fs.readdirSync(path.join("posts"));
+//   const posts = files.map((filename) => {
+//     const slug = filename.replace(".md", "");
+//     const markdownWithMeta = fs.readFileSync(
+//       path.join("posts", filename),
+//       "utf-8"
+//     )
+//     const {data: frontmatter} = matter(markdownWithMeta);
+
+//     return {
+//       slug,
+//       frontmatter,
+//     }
+//   })
+//   console.log(posts);
+//   return {
+//     props: {
+//       posts
+//     }
+//   }
+// }
