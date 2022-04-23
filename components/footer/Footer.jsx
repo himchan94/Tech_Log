@@ -12,9 +12,6 @@ const Footer = () => {
 export default Footer;
 
 const FooterArea = styled.footer`
-  position: relative;
-  left: 0;
-  bottom: 0;
   display: flex;
   justify-content: center;
   width: 100%;
