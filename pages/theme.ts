@@ -7,7 +7,7 @@ export const lightTheme: DefaultTheme = {
   tagBlueColor: "#D1E9F3",
   tagGreenColor: "#BEE8BA",
   tagYelloColor: "#F8D6B7",
-  textColor: "#000", 
+  textColor: "#000",
 };
 
 // 추후 다크모드 추가 예정
