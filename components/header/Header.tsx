@@ -25,7 +25,7 @@ const Header = () => {
       </LeftWrapper>
       <Menu list={menuList} isActive={toggle} />
       <RightWrapper>
-        <Hamburger />
+        <Hamburger onClick={handleClick} />
         {/* <Image
           src={hamburger}
           width={24}
