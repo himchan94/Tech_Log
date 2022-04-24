@@ -9,24 +9,27 @@ const AboutPage = () => {
   return (
     <AboutOuter>
       <div style={{ position: "relative", height: "300px" }}>
-        <Image
+        <Background />
+        {/* <Image
           alt='Mountains'
           src={Background}
           layout='fill'
           objectFit='cover'
-        />
+        /> */}
         <ProfileImage />
       </div>
       <IntroSection>
         <Introduce>Hello World :)</Introduce>
         <Name>김윤지</Name>
         <IconWrapper>
+          <GithubIcon />
+          <GithubIcon />
+          {/* <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
+          <Image src={GithubIcon} width='20' height='20' alt='github' /> */}
         </IconWrapper>
       </IntroSection>
       <InfoSection>

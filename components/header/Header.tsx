@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import Menu from "./Menu";
-import { logo, hamburger } from "../../public/images/icon";
+import Logo from "../../public/images/icon/logo.svg";
+import Hamburger from "../../public/images/icon/hamburger.svg";
+//import { logo, hamburger } from "../../public/images/icon";
 
 const menuList = ["about", "post", "project", "search"];
 
@@ -17,18 +19,20 @@ const Header = () => {
   return (
     <HeaderOuter>
       <LeftWrapper>
-        <Image src={logo} width={30} height={30} alt='logo' />
+        <Logo />
+        {/* <Image src={logo} width={30} height={30} alt='logo' /> */}
         <Title>UDD</Title>
       </LeftWrapper>
       <Menu list={menuList} isActive={toggle} />
       <RightWrapper>
-        <Image
+        <Hamburger />
+        {/* <Image
           src={hamburger}
           width={24}
           height={24}
           alt='hamburger'
           onClick={handleClick}
-        />
+        /> */}
       </RightWrapper>
     </HeaderOuter>
   );
