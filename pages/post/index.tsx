@@ -6,23 +6,27 @@ import PostCard from "../../components/PostCard";
 import Title from "../../components/Title";
 
 interface PostProps {
-  posts: [{
-    slug: string;
-    frontmatter: {
-      title: string;
-      date: string;
-      excerpt: string;
+  posts: [
+    {
+      slug: string;
+      frontmatter: {
+        title: string;
+        date: string;
+        excerpt: string;
+      };
     }
-  }]
+  ];
 }
 
-const PostPage = ({posts}: PostProps) => {
+const PostPage = ({ posts }: PostProps) => {
   return (
     <>
-    <Title title="POSTS" />
-    <div>{posts.map((post, index) => (
-      <PostCard key={index} post={post} />
-    ))}</div>
+      <Title title='POSTS' />
+      <div>
+        {posts.map((post, index) => (
+          <PostCard key={index} post={post} />
+        ))}
+      </div>
     </>
   );
 };
@@ -36,18 +40,18 @@ export async function getStaticProps() {
     const markdownWithMeta = fs.readFileSync(
       path.join("posts", filename),
       "utf-8"
-    )
-    const {data: frontmatter} = matter(markdownWithMeta);
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
 
     return {
       slug,
       frontmatter,
-    }
-  })
+    };
+  });
 
   return {
     props: {
-      posts
-    }
-  }
+      posts,
+    },
+  };
 }
