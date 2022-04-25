@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import Menu from "./Menu";
+import useWindowWidthAndHeight from "../../hooks/useWindowWidthAndHeight";
+import VerticalMenu from "./VerticalMenu";
+import HorizontalMunu from "./HorizontalMunu";
 import { logo, hamburger } from "../../public/images/icon";
 
 const menuList = ["about", "post", "project", "search"];
 
 const Header = () => {
+  const [windowX, windowY] = useWindowWidthAndHeight();
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    if (windowX > 900) {
+      setToggle(false);
+    }
+  }, [windowX]);
 
   const handleClick = () => {
     setToggle(!toggle);
-    console.log(toggle);
   };
 
   return (
@@ -20,7 +28,11 @@ const Header = () => {
         <Image src={logo} width={30} height={30} alt='logo' />
         <Title>UDD</Title>
       </LeftWrapper>
-      <Menu list={menuList} isActive={toggle} />
+      {windowX > 900 && <HorizontalMunu list={menuList} />}
+      {windowX <= 900 && toggle && (
+        <VerticalMenu list={menuList} _handleClick={handleClick} />
+      )}
+
       <RightWrapper>
         <Image
           src={hamburger}
