@@ -8,15 +8,9 @@ import WaveImage from "../../public/images/waves/about_wave.svg";
 const AboutPage = () => {
   return (
     <AboutOuter>
-      <div style={{ position: "relative", height: "300px" }}>
-        <Image
-          alt='Mountains'
-          src={Background}
-          layout='fill'
-          objectFit='cover'
-        />
+      <BackgroundImage>
         <ProfileImage />
-      </div>
+      </BackgroundImage>
       <IntroSection>
         <Introduce>Hello World :)</Introduce>
         <Name>김윤지</Name>
@@ -42,17 +36,25 @@ const AboutOuter = styled.main`
   height: calc(100%-256px);
 `;
 
+const BackgroundImage = styled.div`
+  position: relative;
+  height: 300px;
+  background-image: url("images/background/default.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
+
 const ProfileImage = styled.div`
   position: absolute;
+  top: 220px;
+  right: 0;
+  left: 0;
   width: 160px;
   height: 160px;
   border-radius: 50%;
   background-image: url("https://media.istockphoto.com/photos/portrait-of-young-woman-with-curly-hair-in-the-city-picture-id1218228957?k=20&m=1218228957&s=612x612&w=0&h=1ExWthh3l9yXX6IiW_c8uX1KkSo2-AXlRqPXbElvh6k=");
   background-size: cover;
   background-repeat: no-repeat;
-  top: 220px;
-  right: 0;
-  left: 0;
   margin: 0 auto;
 `;
 
