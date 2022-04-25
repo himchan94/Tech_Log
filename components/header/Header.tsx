@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import useWindowWidthAndHeight from "../../hooks/useWindowWidthAndHeight";
 import VerticalMenu from "./VerticalMenu";
-import HorizontalMunu from "./HorizontalMunu";
+import HorizontalMenu from "./HorizontalMenu";
 import { logo, hamburger } from "../../public/images/icon";
 
 const menuList = ["about", "post", "project", "search"];
@@ -28,7 +28,7 @@ const Header = () => {
         <Image src={logo} width={30} height={30} alt='logo' />
         <Title>UDD</Title>
       </LeftWrapper>
-      {windowX > 900 && <HorizontalMunu list={menuList} />}
+      {windowX > 900 && <HorizontalMenu list={menuList} />}
       {windowX <= 900 && toggle && (
         <VerticalMenu list={menuList} _handleClick={handleClick} />
       )}
