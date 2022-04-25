@@ -37,21 +37,19 @@ const Header = () => {
 export default Header;
 
 const HeaderOuter = styled.header`
-  position: fixed;
-  left: 0;
+  position: sticky;
   top: 0;
-  z-index: 1;
-  width: 100vw;
+  width: 100%;
   height: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
   padding: 0 16px;
   background-color: ${(props) => props.theme.mainColor};
   box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12),
     0px 12px 42px -4px rgba(24, 39, 75, 0.12);
   color: ${(props) => props.theme.textColor};
+  z-index: 1;
 `;
 
 const LeftWrapper = styled.div`
