@@ -6,15 +6,19 @@ const Title = styled.div`
   color: ${(props) => props.theme.textColor};
 `;
 
-
 const Home: NextPage = () => {
   return (
-    <Title>Home</Title>
+    <HomeOuter>
+      <Title>Home</Title>
+    </HomeOuter>
   );
 };
 
-
 export default Home;
+
+const HomeOuter = styled.main`
+  height: calc(100%-256px);
+`;
 
 // export async function getStaticProps() {
 //   const files = fs.readdirSync(path.join("posts"));
