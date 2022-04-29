@@ -4,6 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import Title from "../../../components/Title";
 import styled from "styled-components";
+import {useRouter} from "next/router";
 
 interface PostProps {
   params: {
@@ -22,6 +23,8 @@ const PostDetail = ({
   frontmatter: {title, date, excerpt},
   content,
 }: PostProps) => {
+  const router = useRouter();
+  console.log(router.query)
   return (
     <>
     <Title title="POSTS" />
@@ -96,10 +99,12 @@ line-height: 15px;
 
 display: flex;
 align-items: flex-end;
+margin-bottom: 24px;
 
 color: #9DA5B0;
 `;
 const ArticleContents = styled.div`
+  line-height: 26px;
   img {
     width: 50%;
   }

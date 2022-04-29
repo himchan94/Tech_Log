@@ -4,6 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import PostCard from "../../components/PostCard";
 import Title from "../../components/Title";
+import styled from "styled-components";
 
 interface PostProps {
   posts: [{
@@ -51,3 +52,9 @@ export async function getStaticProps() {
     }
   }
 }
+
+const Div = styled.div`
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;

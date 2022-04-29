@@ -1,5 +1,5 @@
 ---
-title: 'Tech_Log'
+title: 'test1'
 date: 'April 22 ~ 23, 2021'
 cover_image: '/images/posts/image1.jpg'
 ---

@@ -1,15 +1,10 @@
 import type { NextPage } from "next";
 import styled, { ThemeProvider } from "styled-components";
-
-const Title = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
-  color: ${(props) => props.theme.textColor};
-`;
-
+import Title from "../components/Title";
 
 const Home: NextPage = () => {
   return (
-    <Title>Home</Title>
+    <Title title="HOME" />
   );
 };
 
