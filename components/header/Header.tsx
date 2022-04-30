@@ -4,6 +4,7 @@ import styled from "styled-components";
 import useWindowWidthAndHeight from "../../hooks/useWindowWidthAndHeight";
 import VerticalMenu from "./VerticalMenu";
 import HorizontalMenu from "./HorizontalMenu";
+import DarkmodeToggleBtn from "../darkmodToggleBtn/DarkmodeToggleBtn";
 import { logo, hamburger } from "../../public/images/icon";
 
 const menuList = ["about", "post", "project", "search"];
@@ -11,6 +12,8 @@ const menuList = ["about", "post", "project", "search"];
 const Header = () => {
   const [windowX, windowY] = useWindowWidthAndHeight();
   const [toggle, setToggle] = useState(false);
+
+  console.log(windowX);
 
   useEffect(() => {
     if (windowX > 900) {
@@ -28,8 +31,15 @@ const Header = () => {
         <Image src={logo} width={30} height={30} alt='logo' />
         <Title>UDD</Title>
       </LeftWrapper>
-      {windowX > 900 && <HorizontalMenu list={menuList} />}
-      {windowX <= 900 && toggle && (
+      {(!windowX || windowX > 900) && (
+        <>
+          <HorizontalMenu list={menuList} />
+          <BtnWrapper>
+            <DarkmodeToggleBtn />
+          </BtnWrapper>
+        </>
+      )}
+      {(!windowX || windowX <= 900) && toggle && (
         <VerticalMenu list={menuList} _handleClick={handleClick} />
       )}
 
@@ -56,12 +66,22 @@ const HeaderOuter = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 100px 0 16px;
   background-color: ${(props) => props.theme.mainColor};
   box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12),
     0px 12px 42px -4px rgba(24, 39, 75, 0.12);
   color: ${(props) => props.theme.textColor};
   z-index: 1;
+
+  @media (max-width: 900px) {
+    padding: 0 16px;
+  }
+`;
+
+const BtnWrapper = styled.div`
+  position: absolute;
+  right: 30px;
+  bottom: -2px;
 `;
 
 const LeftWrapper = styled.div`
