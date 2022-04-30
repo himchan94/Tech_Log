@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import DarkmodeToggleBtn from "../darkmodToggleBtn/DarkmodeToggleBtn";
 
 interface MenuProps {
   list: string[];
@@ -22,6 +23,12 @@ const VerticalMenu: React.FC<MenuProps> = ({ list, _handleClick }) => {
           </Link>
         </MenuItem>
       ))}
+      <WaveWrapper>
+        <Wave />
+      </WaveWrapper>
+      <ButtonWrapper>
+        <DarkmodeToggleBtn />
+      </ButtonWrapper>
     </MenuWrapper>
   );
 };
@@ -51,4 +58,22 @@ const MenuItem = styled.li`
   &:not(:first-child) {
     margin-top: 16px;
   }
+`;
+
+const WaveWrapper = styled.div`
+  height: 35px;
+  margin-top: 41px;
+`;
+
+const Wave = styled.img.attrs({
+  src: "images/waves/header_wave.svg",
+})`
+  width: 100%;
+  object-fit: cover;
+`;
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  right: 21px;
+  bottom: 0;
 `;
