@@ -16,12 +16,14 @@ const AboutPage = () => {
         <Introduce>Hello World :)</Introduce>
         <Name>김윤지</Name>
         <IconWrapper>
+          <GithubIcon />
+          <GithubIcon />
+          {/* <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
           <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
+          <Image src={GithubIcon} width='20' height='20' alt='github' /> */}
         </IconWrapper>
       </IntroSection>
       <InfoWrapper>

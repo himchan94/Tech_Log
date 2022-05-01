@@ -10,7 +10,8 @@ const Title = ({title}: TitleProps) => {
   return (
     <PostMain>
       <PostImg>
-      <Image src={HeaderImg} width={400} alt="" />
+        <HeaderImg />
+      {/* <Image src={HeaderImg} width={400} alt="" /> */}
       </PostImg>
       <PostH1>{title}</PostH1>
     </PostMain>

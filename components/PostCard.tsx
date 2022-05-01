@@ -33,6 +33,7 @@ const PostCardContainer = styled.div`
   padding: 24px 16px;
   background-color: #FFF;
   border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
 `;
 const PostCardTitle = styled.h2`
   margin: 10px 0 8px;

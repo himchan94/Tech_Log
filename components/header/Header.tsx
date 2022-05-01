@@ -7,6 +7,7 @@ import HorizontalMenu from "./HorizontalMenu";
 import DarkmodeToggleBtn from "../darkmodToggleBtn/DarkmodeToggleBtn";
 import { logo, hamburger } from "../../public/images/icon";
 
+
 const menuList = ["about", "post", "project", "search"];
 
 const Header = () => {
@@ -28,7 +29,8 @@ const Header = () => {
   return (
     <HeaderOuter>
       <LeftWrapper>
-        <Image src={logo} width={30} height={30} alt='logo' />
+        <Logo />
+        {/* <Image src={logo} width={30} height={30} alt='logo' /> */}
         <Title>UDD</Title>
       </LeftWrapper>
       {(!windowX || windowX > 900) && (
@@ -44,13 +46,14 @@ const Header = () => {
       )}
 
       <RightWrapper>
-        <Image
+        <Hamburger onClick={handleClick} />
+        {/* <Image
           src={hamburger}
           width={24}
           height={24}
           alt='hamburger'
           onClick={handleClick}
-        />
+        /> */}
       </RightWrapper>
     </HeaderOuter>
   );
