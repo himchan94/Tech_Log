@@ -1,15 +1,24 @@
 import type { NextPage } from "next";
 import styled, { ThemeProvider } from "styled-components";
-import Title from "../components/Title";
+
+const Title = styled.div`
+  background-color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
+`;
 
 const Home: NextPage = () => {
   return (
-    <Title title="HOME" />
+    <HomeOuter>
+      <Title>Home</Title>
+    </HomeOuter>
   );
 };
 
-
 export default Home;
+
+const HomeOuter = styled.main`
+  height: calc(100%-256px);
+`;
 
 // export async function getStaticProps() {
 //   const files = fs.readdirSync(path.join("posts"));

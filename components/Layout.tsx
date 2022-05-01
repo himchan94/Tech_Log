@@ -11,24 +11,18 @@ const Div = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #F6F7F9;
-  overflow: scroll;
+  background-color: #f6f7f9;
+  /* overflow: scroll; */
 `;
 
-const Main = styled.main`
-  widht: 100%;
-  height: 100%;
-  overflow: scroll;
-`;
+const Main = styled.main``;
 
 export default function Layout({ children }: Props) {
   return (
-    <Div>
+    <>
       <Header />
-      <Main>
-        <div>{children}</div>
-      </Main>
+      {children}
       <Footer />
-    </Div>
+    </>
   );
 }

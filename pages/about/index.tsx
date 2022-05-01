@@ -4,20 +4,14 @@ import Image from "next/image";
 import Background from "../../public/images/background/default.svg";
 import GithubIcon from "../../public/images/logo/github.svg";
 import WaveImage from "../../public/images/waves/about_wave.svg";
+import Tag from "../../components/tag/Tag";
 
 const AboutPage = () => {
   return (
     <AboutOuter>
-      <div style={{ position: "relative", height: "300px" }}>
-        <Background />
-        {/* <Image
-          alt='Mountains'
-          src={Background}
-          layout='fill'
-          objectFit='cover'
-        /> */}
+      <BackgroundImage>
         <ProfileImage />
-      </div>
+      </BackgroundImage>
       <IntroSection>
         <Introduce>Hello World :)</Introduce>
         <Name>김윤지</Name>
@@ -32,9 +26,17 @@ const AboutPage = () => {
           <Image src={GithubIcon} width='20' height='20' alt='github' /> */}
         </IconWrapper>
       </IntroSection>
-      <InfoSection>
-        <WaveWrapper />
-      </InfoSection>
+      <InfoWrapper>
+        <SubTitle>Hello World</SubTitle>
+        <Typhography>
+          프론트엔드 개발자를 꿈꾸는 김윤지입니다. <br />
+          개방적이고, 즐거운 경험을 만들어가길 원합니다
+        </Typhography>
+      </InfoWrapper>
+      <InfoWrapper>
+        <SubTitle>Skills</SubTitle>
+        <Tag tagName='#javascript' />
+      </InfoWrapper>
     </AboutOuter>
   );
 };
@@ -42,20 +44,30 @@ const AboutPage = () => {
 export default AboutPage;
 
 const AboutOuter = styled.main`
+  display: flex;
+  flex-direction: column;
   height: calc(100%-256px);
+`;
+
+const BackgroundImage = styled.div`
+  position: relative;
+  height: 300px;
+  background-image: url("images/background/default.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const ProfileImage = styled.div`
   position: absolute;
+  top: 220px;
+  right: 0;
+  left: 0;
   width: 160px;
   height: 160px;
   border-radius: 50%;
   background-image: url("https://media.istockphoto.com/photos/portrait-of-young-woman-with-curly-hair-in-the-city-picture-id1218228957?k=20&m=1218228957&s=612x612&w=0&h=1ExWthh3l9yXX6IiW_c8uX1KkSo2-AXlRqPXbElvh6k=");
   background-size: cover;
   background-repeat: no-repeat;
-  top: 220px;
-  right: 0;
-  left: 0;
   margin: 0 auto;
 `;
 
@@ -88,10 +100,40 @@ const Name = styled.h1`
 const IconWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 16px;
   width: 204px;
   margin-top: 16px;
 `;
 
-const InfoSection = styled.div``;
+const InfoWrapper = styled.div`
+  display: inline-block;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 67px;
+`;
 
-const WaveWrapper = styled.div``;
+const WaveContainer = styled.div`
+  height: 35px;
+`;
+
+const Wave = styled.img.attrs({
+  src: "images/waves/about_wave.svg",
+})`
+  width: 100%;
+  object-fit: cover;
+`;
+
+const TextContainer = styled.div``;
+
+const SubTitle = styled.h2`
+  font-family: MonumentExtended;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 20px;
+`;
+
+const Typhography = styled.p`
+  margin-top: 24px;
+  font-weight: 400;
+  font-size: 12px;
+`;
