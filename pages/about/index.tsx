@@ -9,21 +9,17 @@ import Tag from "../../components/tag/Tag";
 const AboutPage = () => {
   return (
     <AboutOuter>
-      <BackgroundImage>
-        <ProfileImage />
-      </BackgroundImage>
+      <BackgroundImage>{/* <ProfileImage /> */}</BackgroundImage>
       <IntroSection>
         <Introduce>Hello World :)</Introduce>
         <Name>김윤지</Name>
         <IconWrapper>
-          <GithubIcon />
-          <GithubIcon />
-          {/* <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' />
-          <Image src={GithubIcon} width='20' height='20' alt='github' /> */}
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
+          <Image src={GithubIcon} width="20" height="20" alt="github" />
         </IconWrapper>
       </IntroSection>
       <InfoWrapper>
@@ -35,7 +31,7 @@ const AboutPage = () => {
       </InfoWrapper>
       <InfoWrapper>
         <SubTitle>Skills</SubTitle>
-        <Tag tagName='#javascript' />
+        <Tag tagName="#javascript" />
       </InfoWrapper>
     </AboutOuter>
   );
