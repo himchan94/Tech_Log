@@ -7,14 +7,11 @@ import HorizontalMenu from "./HorizontalMenu";
 import DarkmodeToggleBtn from "../darkmodToggleBtn/DarkmodeToggleBtn";
 import { logo, hamburger } from "../../public/images/icon";
 
-
 const menuList = ["about", "post", "project", "search"];
 
 const Header = () => {
   const [windowX, windowY] = useWindowWidthAndHeight();
   const [toggle, setToggle] = useState(false);
-
-  console.log(windowX);
 
   useEffect(() => {
     if (windowX > 900) {
@@ -29,8 +26,7 @@ const Header = () => {
   return (
     <HeaderOuter>
       <LeftWrapper>
-        <Logo />
-        {/* <Image src={logo} width={30} height={30} alt='logo' /> */}
+        <Image src={logo} width={30} height={30} alt='logo' />
         <Title>UDD</Title>
       </LeftWrapper>
       {(!windowX || windowX > 900) && (
@@ -46,14 +42,13 @@ const Header = () => {
       )}
 
       <RightWrapper>
-        <Hamburger onClick={handleClick} />
-        {/* <Image
+        <Image
           src={hamburger}
           width={24}
           height={24}
           alt='hamburger'
           onClick={handleClick}
-        /> */}
+        />
       </RightWrapper>
     </HeaderOuter>
   );
@@ -85,6 +80,10 @@ const BtnWrapper = styled.div`
   position: absolute;
   right: 30px;
   bottom: -2px;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const LeftWrapper = styled.div`
