@@ -20,9 +20,10 @@ interface PostProps {
 }
 
 const PostPage = ({ posts }: PostProps) => {
+  console.log(posts);
   return (
     <>
-      <Title title='POSTS' />
+      <Title title="POSTS" />
       <div>
         {posts.map((post, index) => (
           <PostCard key={index} post={post} />
@@ -33,6 +34,34 @@ const PostPage = ({ posts }: PostProps) => {
 };
 
 export default PostPage;
+
+// interface PostProps {
+//   posts: [
+//     {
+//       slug: string;
+//       frontmatter: {
+//         title: string;
+//         date: string;
+//         excerpt: string;
+//       };
+//     }
+//   ];
+// }
+
+// const PostPage = ({ posts }: PostProps) => {
+//   return (
+//     <>
+//       <Title title='POSTS' />
+//       <div>
+//         {posts.map((post, index) => (
+//           <PostCard key={index} post={post} />
+//         ))}
+//       </div>
+//     </>
+//   );
+// };
+
+// export default PostPage;
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("posts"));
@@ -52,13 +81,13 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts
-    }
-  }
+      posts,
+    },
+  };
 }
 
-const Div = styled.div`
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
+// const Div = styled.div`
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// `;

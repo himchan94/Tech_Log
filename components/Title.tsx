@@ -6,17 +6,16 @@ interface TitleProps {
   title: string;
 }
 
-const Title = ({title}: TitleProps) => {
+const Title = ({ title }: TitleProps) => {
   return (
     <PostMain>
       <PostImg>
-        <HeaderImg />
-      {/* <Image src={HeaderImg} width={400} alt="" /> */}
+        <Image src={HeaderImg} width={400} alt="" />
       </PostImg>
       <PostH1>{title}</PostH1>
     </PostMain>
   );
-}
+};
 
 export default Title;
 
